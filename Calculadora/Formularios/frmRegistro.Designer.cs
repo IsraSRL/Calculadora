@@ -38,10 +38,16 @@
             txtNombre = new TextBox();
             label1 = new Label();
             tabPage2 = new TabPage();
+            splitContainer1 = new SplitContainer();
             dgvPersonas = new DataGridView();
+            btnEliminar = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvPersonas).BeginInit();
             SuspendLayout();
             // 
@@ -133,7 +139,7 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(dgvPersonas);
+            tabPage2.Controls.Add(splitContainer1);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -142,13 +148,43 @@
             tabPage2.Text = "Mostrar";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(3, 3);
+            splitContainer1.Name = "splitContainer1";
+            splitContainer1.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Controls.Add(dgvPersonas);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(btnEliminar);
+            splitContainer1.Size = new Size(566, 353);
+            splitContainer1.SplitterDistance = 303;
+            splitContainer1.TabIndex = 1;
+            // 
             // dgvPersonas
             // 
             dgvPersonas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPersonas.Location = new Point(6, 6);
+            dgvPersonas.Dock = DockStyle.Fill;
+            dgvPersonas.Location = new Point(0, 0);
             dgvPersonas.Name = "dgvPersonas";
-            dgvPersonas.Size = new Size(560, 347);
+            dgvPersonas.Size = new Size(566, 303);
             dgvPersonas.TabIndex = 0;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Enabled = false;
+            btnEliminar.Location = new Point(488, 3);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(75, 23);
+            btnEliminar.TabIndex = 0;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // frmRegistro
             // 
@@ -162,6 +198,10 @@
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvPersonas).EndInit();
             ResumeLayout(false);
         }
@@ -179,5 +219,7 @@
         private TextBox txtNombre;
         private Label label1;
         private DataGridView dgvPersonas;
+        private SplitContainer splitContainer1;
+        private Button btnEliminar;
     }
 }
