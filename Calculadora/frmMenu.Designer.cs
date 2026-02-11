@@ -38,6 +38,7 @@
             registroToolStripMenuItem = new ToolStripMenuItem();
             temporizadoresToolStripMenuItem = new ToolStripMenuItem();
             relojToolStripMenuItem = new ToolStripMenuItem();
+            editorToolStripMenuItem = new ToolStripMenuItem();
             mnsPrincipal.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,13 +61,13 @@
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(96, 22);
+            salirToolStripMenuItem.Size = new Size(180, 22);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
             // aplicacionesToolStripMenuItem
             // 
-            aplicacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { calculadoraSimpleToolStripMenuItem, ordenamientosToolStripMenuItem, registroToolStripMenuItem, temporizadoresToolStripMenuItem });
+            aplicacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { calculadoraSimpleToolStripMenuItem, ordenamientosToolStripMenuItem, registroToolStripMenuItem, temporizadoresToolStripMenuItem, editorToolStripMenuItem });
             aplicacionesToolStripMenuItem.Name = "aplicacionesToolStripMenuItem";
             aplicacionesToolStripMenuItem.Size = new Size(86, 20);
             aplicacionesToolStripMenuItem.Text = "Aplicaciones";
@@ -109,9 +110,16 @@
             // relojToolStripMenuItem
             // 
             relojToolStripMenuItem.Name = "relojToolStripMenuItem";
-            relojToolStripMenuItem.Size = new Size(180, 22);
+            relojToolStripMenuItem.Size = new Size(100, 22);
             relojToolStripMenuItem.Text = "Reloj";
             relojToolStripMenuItem.Click += relojToolStripMenuItem_Click;
+            // 
+            // editorToolStripMenuItem
+            // 
+            editorToolStripMenuItem.Name = "editorToolStripMenuItem";
+            editorToolStripMenuItem.Size = new Size(180, 22);
+            editorToolStripMenuItem.Text = "Editor";
+            editorToolStripMenuItem.Click += editorToolStripMenuItem_Click;
             // 
             // frmMenu
             // 
@@ -140,5 +148,6 @@
         private ToolStripMenuItem registroToolStripMenuItem;
         private ToolStripMenuItem temporizadoresToolStripMenuItem;
         private ToolStripMenuItem relojToolStripMenuItem;
+        private ToolStripMenuItem editorToolStripMenuItem;
     }
 }
