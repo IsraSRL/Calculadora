@@ -13,6 +13,8 @@ namespace Calculadora.Formularios
     {
         bool saved = false;
         string path = "";
+        int contadorPalabras = 0;
+        string texto;
         public frmEditor()
         {
             InitializeComponent();
@@ -55,7 +57,7 @@ namespace Calculadora.Formularios
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(saved == false)
+            if (saved == false)
             {
                 Guardar();
                 saved = true;
@@ -67,6 +69,30 @@ namespace Calculadora.Formularios
                     archivo.Write(rtbEditor.Text);
                 }
             }
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void rtbEditor_TextChanged(object sender, EventArgs e)
+        {
+            texto = rtbEditor.Text;
+            string[] palabras = texto.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            
+            tssStatus.Text = palabras.Length.ToString() + " Palabras";
+            //tssStatus.Text = $"{palabras.length} palabras"
+            //funciona igual que el ToString
+        }
+
+        private void tssStatus_Click(object sender, EventArgs e)
+        {
+            string[] palabras = texto.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] parrafos = texto.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            MessageBox.Show("Estadisticas:\n\nPalabras: " + palabras.Length.ToString() + "\n\nLetras: " 
+                + texto.Length.ToString() + "\n\nLineas: " + parrafos.Length.ToString()
+                , "Contador de Palabras");
         }
     }
 }
