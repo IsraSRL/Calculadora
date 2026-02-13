@@ -80,7 +80,7 @@ namespace Calculadora.Formularios
         {
             texto = rtbEditor.Text;
             string[] palabras = texto.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-            
+
             tssStatus.Text = palabras.Length.ToString() + " Palabras";
             //tssStatus.Text = $"{palabras.length} palabras"
             //funciona igual que el ToString
@@ -90,9 +90,25 @@ namespace Calculadora.Formularios
         {
             string[] palabras = texto.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
             string[] parrafos = texto.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            MessageBox.Show("Estadisticas:\n\nPalabras: " + palabras.Length.ToString() + "\n\nLetras: " 
+            MessageBox.Show("Estadisticas:\n\nPalabras: " + palabras.Length.ToString() + "\n\nLetras: "
                 + texto.Length.ToString() + "\n\nLineas: " + parrafos.Length.ToString()
                 , "Contador de Palabras");
+        }
+
+        private void fuenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ftdEditor.ShowDialog() == DialogResult.OK)
+            {
+                rtbEditor.Font = ftdEditor.Font;
+            }
+        }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(cldEditor.ShowDialog() == DialogResult.OK)
+            {
+                rtbEditor.ForeColor = cldEditor.Color;
+            }
         }
     }
 }

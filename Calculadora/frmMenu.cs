@@ -43,5 +43,11 @@ namespace Calculadora
             frmEditor editor = new frmEditor();
             editor.Show();
         }
+
+        private void contadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmContador contador = new frmContador();
+            contador.Show();
+        }
     }
 }
